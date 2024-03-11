@@ -14,10 +14,16 @@ datasource db {
 }
 
 model Donor {
-  id          Int    @id @default(autoincrement())
-  fullName    String
-  username    String @unique
-  password    String
+  id       Int    @id @default(autoincrement())
+  fullName String
+  username String @unique
+  password String
   // phoneNumber Int    @unique
-  email       String @unique 
+  email    String @unique
+}
+
+model userAccount {
+  id       Int    @id() @unique() @default(autoincrement())
+  email    String @unique()
+  password String
 }
