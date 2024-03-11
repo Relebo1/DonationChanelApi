@@ -5,20 +5,25 @@ import { IsEmail, IsNotEmpty, IsNumber, IsString } from "class-validator";
 export class createDonorDto {
     @IsString()
     @IsNotEmpty()
-    fullName: string;
+    firstName: string;
+
+    @IsString()
+    @IsNotEmpty()
+    lastname: string;
 
     @IsNotEmpty()
-    @IsString()
-    username: string;
-    @IsNotEmpty()
-    @IsString()
-    password: string;
+    @IsNumber()
+    phoneNumber: number;
 
-    @IsNotEmpty()
-    // @IsNumber()
-    // phoneNumber: number;
     @IsNotEmpty()
     @IsString()
     @IsEmail()
     email: string;
+
+    @IsNotEmpty()
+    amount: number;
+
+    @IsNotEmpty()
+    @IsString()
+    paymentMethod: string;
 }
